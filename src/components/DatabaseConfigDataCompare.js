@@ -199,8 +199,7 @@ class DatabaseConfigDataCompare extends Component {
             });
         }
         return (
-            <div  >
-               
+            <div>
                 <form onSubmit={this.formSubmitHandler} style={{padding:"20px", float:'center'}}>
                      {
                          formElementsArray.map(formElement => ( 

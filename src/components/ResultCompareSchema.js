@@ -15,19 +15,15 @@ class ResultCompareSchema extends Component {
     
 
     render() {
-        
-        const JsonData = this.props.resultJsonData['tables']
-        let currentPartialData = []
-        for (const item in JsonData){
-            console.log(item)
-            currentPartialData.push(item)
-        }
-        console.log(currentPartialData)
+        console.log(this.props.resultJsonData)
         return (
 
-            <div style={{padding:"20px",margin:'20', float:'center', overflow:'scroll',minWidth:'90%'}} >
+            <div style={{padding:"20px",margin:'20', float:'center', overflow:'scroll',minWidth:'99%',fontSize:18}} >
                 <center>
-                        <JSONViewer json={this.props.resultJsonData} />
+                    {
+                        this.props.resultJsonData === null ?  "Select Databases in the top bar" : 
+                        this.props.resultJsonData === [] ? "No Differences Detected" : <JSONViewer json={this.props.resultJsonData} /> 
+                    }
                 </center>
             </div>
         )

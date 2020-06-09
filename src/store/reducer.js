@@ -1,7 +1,7 @@
 const initialState = {
     databaseConfigSourceId: '',
     databaseConfigTargetId : '',
-    currentUser: 'vinay'
+    currentUser: ''
     
 }
 
@@ -16,6 +16,14 @@ const reducer = (state = initialState, action) => {
     if(action.type == 'TARGET'){
         const tempState = {...state}
         tempState['databaseConfigTargetId'] = action.newId
+        state = tempState
+    }
+
+    if(action.type == 'ADD USER'){
+        const tempState = {...state}
+        tempState['currentUser'] = action.newUser
+        tempState['databaseConfigSourceId'] = ''
+        tempState['databaseConfigTargetId'] = ''
         state = tempState
     }
     return state;

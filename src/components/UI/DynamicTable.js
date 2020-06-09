@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-
+import { Empty } from 'antd';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
@@ -35,19 +35,19 @@ class DynamicTable extends Component {
         console.log(rowData)
         console.log(columnDefsData)
         return (
-          <div
-            className="ag-theme-alpine"
-            style={{
-                padding: '20px',
-                height: '450px',
-                width: '90%' ,
-                float:'center'}}
-          >
-            <AgGridReact
-              columnDefs={columnDefsData}
-              rowData={rowData}>
-            </AgGridReact>
-          </div>
+            <div className="ag-theme-alpine"
+                    style={{
+                        padding: '20px',
+                        height: '450px',
+                        width: '90%' ,
+                        float:'center',
+                        margin:25}}
+                >
+                <div style={{fontSize:20,margin:25}}>{this.props.heading}</div>
+                {
+                    columnDefsData.length == 0  ? <Empty></Empty>:    <AgGridReact columnDefs={columnDefsData} rowData={rowData} /> 
+                }
+            </div>
         );
       }
 }

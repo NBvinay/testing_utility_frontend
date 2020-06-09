@@ -6,9 +6,7 @@ import './App.css';
 import { Layout, Menu } from 'antd';
 import { Affix, Button } from 'antd';
 
-
 import {
-
     PieChartOutlined,
     DesktopOutlined,
     ContainerOutlined,
@@ -21,9 +19,7 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 const Application = () => {
-
-
-    
+   
         const [top, bottom] = useState(10);
         return (
             <Layout>
@@ -32,7 +28,7 @@ const Application = () => {
                         overflow: '',
                         height: '100vh',
                         position: 'fixed',
-                        left: 0,
+                        left: 10,
                         backgroundColor: 'white'
                     }}>
                     <div className="logo" >
@@ -44,15 +40,13 @@ const Application = () => {
                         defaultOpenKeys={['sub1']}
                         mode="inline"
                         theme="light"
+                        
                     >
                         <Menu.Item key="1" icon={<PieChartOutlined />}>
                             <Link to={{ pathname: '/' }}>Compare Schema</Link>
                         </Menu.Item>
                         <Menu.Item key="2" icon={<DesktopOutlined />}>
                             <Link to={{ pathname: '/compareData' }}>Compare Data</Link>
-                        </Menu.Item>
-                        <Menu.Item key="3" icon={<DesktopOutlined />}>
-                            <Link to={{ pathname: '/compareDataGUI' }}>Compare Data [ GUI ]</Link>
                         </Menu.Item>
                         <Menu.Item key="4" icon={<ContainerOutlined />}>
                             <Link to={{ pathname: '/SQLExecutor' }}>Execute SQL</Link>
@@ -65,7 +59,7 @@ const Application = () => {
                 
                 <Layout className="site-layout" style={{ marginLeft: 200 }}>
                     <Affix offsetTop={top}>
-                        <Header className="site-layout-background" style={{ padding: 0, backgroundColor:'lightBlue'}} >
+                        <Header className="site-layout-background" style={{ padding: 0, backgroundColor:'#e6f7ff', border:"1px solid #1890ff", marginLeft:15}} >
                             <TopBar></TopBar>
                         </Header>
                     </Affix>
